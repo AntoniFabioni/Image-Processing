@@ -1,2 +1,2 @@
 # Image-Processing
-Cool ways to manipulate pixels
+Cool ways to manipulate pixels.
