@@ -1,1 +1,1 @@
-# Test
+# This program implements "smart image scaling" using a seam carving algorithm.
