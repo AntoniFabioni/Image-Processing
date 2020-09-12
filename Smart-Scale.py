@@ -38,7 +38,6 @@ def calc_energy(img):
 
     return energy_map
 
-@numba.jit
 def minimum_seam(img):
     
     r, c, _ = img.shape
@@ -63,7 +62,6 @@ def minimum_seam(img):
 
     return M, backtrack
 
-@numba.jit
 def carve_column(img):
     r, c, _ = img.shape
 
