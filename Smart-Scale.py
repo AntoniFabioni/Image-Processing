@@ -6,6 +6,7 @@ important details.
 
 import sys
 
+import numba
 import numpy as np
 from imageio import imread, imwrite
 from scipy.ndimage.filters import convolve
