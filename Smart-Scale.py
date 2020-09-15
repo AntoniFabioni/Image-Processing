@@ -11,6 +11,8 @@ from imageio import imread, imwrite
 from scipy.ndimage.filters import convolve
 from tqdm import trange
 
+# numba.jit helps speed up calculations
+
 def calc_energy(img):
     filter_du = np.array([
         [1.0, 2.0, 1.0],
