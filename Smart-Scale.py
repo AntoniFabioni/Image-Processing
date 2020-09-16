@@ -1,7 +1,7 @@
 '''
-This program implements "smart image scaling" using a seam carving algorithm.
-The image will be scaled such that its width will be reduced while preserving
-important details by removing low-contour regions.
+This program implements a seam carving algorithm to scale such that
+the width will be reduced while preserving important details by
+removing low-contour regions.
 '''
 
 import sys
