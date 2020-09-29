@@ -1,3 +1,3 @@
-# Work in progress
+# Work in progress.
 
 import numpy as np
