@@ -6,3 +6,6 @@ import numba
 from imageio import imread, imwrite
 from scipy.ndimage.filters import convolve
 from tqdm import trange
+
+def F(x, y):
+    pass
