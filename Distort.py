@@ -1,4 +1,4 @@
-# Work in progress. Plan is to distort an image in a cool way!!!
+# Work in progress. Plan is to distort an image in a cool way, maybe using fractals??
 
 import numpy as np
 import sys
