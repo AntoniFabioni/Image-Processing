@@ -99,7 +99,7 @@ def crop_c(img, scale_c):
     r, c, _ = img.shape
     new_c = int(scale_c * c)
 
-    for i in trange(c - new_c): # use range if you don't want to use tqdm
+    for i in trange(c - new_c):
         img = carve_column(img)
 
     return img
