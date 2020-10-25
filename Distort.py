@@ -12,7 +12,7 @@ import scipy.misc
 import numpy as np
 import matplotlib.pyplot as plt
 
-img = scipy.misc.lena() # Error??
+img = scipy.misc.lena() # Error???
 
 A = img.shape[0] / 3.0
 w = 2.0 / img.shape[1]
