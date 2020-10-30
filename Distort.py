@@ -1,4 +1,4 @@
-# Work in progress. Plan is to distort an image according to a "shift" function.
+# Work in progress. Plan is to distort an image (e.g. jpg, png) according to a "shift" function.
 # This program is currently in an incomplete stage.
 
 # import numpy as np
