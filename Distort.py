@@ -27,4 +27,5 @@ for i in range(img.shape[0]):
 plt.imshow(img, cmap=plt.cm.gray)
 plt.show()
 
-# This program is meant to be run from the command line.
+# This program is meant to be run
+# from the command line.
