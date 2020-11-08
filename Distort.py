@@ -26,3 +26,18 @@ for i in range(img.shape[0]):
 
 plt.imshow(img, cmap=plt.cm.gray)
 plt.show()
+
+# def main():
+#     scale = float(sys.argv[1])
+#     in_filename = sys.argv[2]
+#     out_filename = sys.argv[3]
+
+#     img = imread(in_filename)
+#     out = crop_c(img, scale)
+#     imwrite(out_filename, out)
+
+# if __name__ == '__main__':
+#     main()
+
+# This program is intended to be called
+# in the command line.
