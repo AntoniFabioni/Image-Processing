@@ -27,7 +27,7 @@ for i in range(img.shape[0]):
     img[:,i] = np.roll(img[:,i], int(shift(i)))
 
 plt.imshow(img, cmap=plt.cm.gray)
-plt.show() # Make file instead?
+plt.show() # Maybe make file instead?
 
 # def main():
 #     scale = float(sys.argv[1])
