@@ -1,6 +1,9 @@
 '''
 Work in progress. Plan is to distort an image (e.g. jpg, png) according to a "shift" function.
 This program is currently in an incomplete stage.
+
+This program is intended to be called
+in the command line.
 '''
 
 # import numpy as np
@@ -40,6 +43,3 @@ plt.show() # Maybe make file instead of showing image?
 
 # if __name__ == '__main__':
 #     main()
-
-# This program is intended to be called
-# in the command line.
