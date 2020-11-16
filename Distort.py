@@ -3,7 +3,7 @@ Work in progress. Plan is to distort an image (e.g. jpg, png) according to a "sh
 This program is currently in an incomplete stage.
 
 This program is intended to be called
-in the command line.
+from the command line.
 '''
 
 # import numpy as np
