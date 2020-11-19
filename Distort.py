@@ -23,7 +23,7 @@ img = scipy.misc.lena() # Error...no attribute 'lena'??
 A = img.shape[0] / 3.0
 w = 2.0 / img.shape[1]
 
-k = 4
+k = 4 # Make variable when calling?
 
 shift = lambda x: A * np.sin(k*np.pi*x * w)
 
