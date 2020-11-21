@@ -37,7 +37,7 @@ plt.imshow(img, cmap=plt.cm.gray)
 plt.show() # Maybe make file instead of showing image??
 
 # def main():
-#     scale = float(sys.argv[1])
+#     scale = float(sys.argv[1])      ... k?
 #     in_filename = sys.argv[2]
 #     out_filename = sys.argv[3]
 
