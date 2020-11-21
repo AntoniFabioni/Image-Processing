@@ -30,6 +30,9 @@ shift = lambda x: A * np.sin(k*np.pi*x * w)
 for i in range(img.shape[0]):
     img[:,i] = np.roll(img[:,i], int(shift(i)))
 
+def modify(image, function):
+    pass
+
 plt.imshow(img, cmap=plt.cm.gray)
 plt.show() # Maybe make file instead of showing image??
 
