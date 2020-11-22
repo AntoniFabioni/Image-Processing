@@ -2,8 +2,8 @@
 Work in progress. Plan is to distort an image (e.g. jpg, png) according to a "shift" function.
 This program is currently in an incomplete stage.
 
-This program is intended to be called
-from the command line.
+This program is intended to be
+called from the command line.
 '''
 
 # import numpy as np
