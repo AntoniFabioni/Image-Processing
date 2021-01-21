@@ -1,5 +1,5 @@
 '''
-Work in progress. Plan is to distort an image (e.g. jpg, png) according to a "shift" function.
+Work in progress. Distorts an image (e.g. jpg, png) according to a "shift" function.
 '''
 
 # import numpy as np
