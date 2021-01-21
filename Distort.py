@@ -14,7 +14,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 img = scipy.misc.lena() # Error...no attribute 'lena'??
-# Replace with another image
+# Replace with another image?
 
 A = img.shape[0] / 3.0
 w = 2.0 / img.shape[1]
