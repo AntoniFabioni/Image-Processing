@@ -2,7 +2,6 @@
 Work in progress. Distorts an image (e.g. jpg, png) according to a "shift" function.
 '''
 
-# import numpy as np
 # import sys
 # import numba
 # from imageio import imread, imwrite
@@ -14,7 +13,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 img = scipy.misc.lena() # Error...no attribute 'lena'??
-# Replace with another image?
+# Replace with another image?vs
 
 A = img.shape[0] / 3.0
 w = 2.0 / img.shape[1]
