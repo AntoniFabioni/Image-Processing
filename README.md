@@ -1,3 +1,3 @@
 # Image-Processing
-Cool ways to manipulate pixels, or even some replicas of existing "Photoshop tools".
-This repo is pretty experimental (and might require some funny tricks to get things running).
+Awesome ways to manipulate pixels! Even makeshift "Photoshop tools" too!
+This is pretty experimental and might require some tricks to get things working correctly.
