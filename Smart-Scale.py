@@ -1,7 +1,6 @@
 '''
-This program implements a seam carving algorithm to scale such that
-the width will be reduced while preserving important details by
-removing low-contour regions.
+Use a seam carving algorithm to reduce image width while
+preserving important details by removing low-contour regions.
 '''
 
 import sys
