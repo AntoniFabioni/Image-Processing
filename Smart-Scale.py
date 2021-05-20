@@ -16,19 +16,16 @@ def calc_energy(img):
         [0.0, 0.0, 0.0],
         [-1.0, -2.0, -1.0],
     ])
-    # This converts it from a 2D filter to a 3D filter, replicating the same
+
+    # transpose switches indices of rows and columns
+    filter_dv = np.transpose(filter_du)
+
+    # This converts from a 2D filter to a 3D filter, replicating the same
     # filter for each channel: R, G, B
     filter_du = np.stack([filter_du] * 3, axis=2)
-
-    filter_dv = np.array([
-        [1.0, 0.0, -1.0],
-        [2.0, 0.0, -2.0],
-        [1.0, 0.0, -1.0],
-    ])
-    # This converts it from a 2D filter to a 3D filter, replicating the same
-    # filter for each channel: R, G, B
     filter_dv = np.stack([filter_dv] * 3, axis=2)
 
+    # Find each pixel's energy value
     img = img.astype('float32')
     convolved = np.absolute(convolve(img, filter_du)) + np.absolute(convolve(img, filter_dv))
 
@@ -37,17 +34,18 @@ def calc_energy(img):
 
     return energy_map
 
-@numba.jit # numba.jit helps speed up calculations
+# numba.jit helps speed up calculations
+@numba.jit
 def minimum_seam(img):
     
-    r, c, _ = img.shape
+    row, col, _ = img.shape
     energy_map = calc_energy(img)
 
     M = energy_map.copy()
     backtrack = np.zeros_like(M, dtype=np.int)
 
-    for i in range(1, r):
-        for j in range(0, c):
+    for i in range(1, row):
+        for j in range(0, col):
             # Handle the left edge of the image, to ensure we don't index -1
             if j == 0:
                 idx = np.argmin(M[i - 1, j:j + 2])
@@ -63,21 +61,20 @@ def minimum_seam(img):
     return M, backtrack
 
 @numba.jit
-def carve_column(img):
-    r, c, _ = img.shape
+def carve_col(img):
+    row, col, _ = img.shape
 
     M, backtrack = minimum_seam(img)
 
-    # Create a (r, c) matrix filled with the value True
-    # We'll be removing all pixels from the image which
-    # have False later
-    mask = np.ones((r, c), dtype=np.bool)
+    # Create a (row, col) matrix filled with the value True,
+    # We'll be removing all pixels which have False later
+    mask = np.ones((row, col), dtype=np.bool)
 
     # Find the position of the smallest element in the
     # last row of M
     j = np.argmin(M[-1])
 
-    for i in reversed(range(r)):
+    for i in reversed(range(row)):
         # Mark the pixels for deletion
         mask[i, j] = False
         j = backtrack[i, j]
@@ -88,16 +85,16 @@ def carve_column(img):
 
     # Delete all the pixels marked False in the mask,
     # and resize it to the new image dimensions
-    img = img[mask].reshape((r, c - 1, 3))
+    img = img[mask].reshape((row, col - 1, 3))
 
     return img
 
-def crop_c(img, scale_c):
-    r, c, _ = img.shape
-    new_c = int(scale_c * c)
+def crop_col(img, scale_col):
+    row, col, _ = img.shape
+    new_col = int(scale_col * col)
 
-    for i in trange(c - new_c):
-        img = carve_column(img)
+    for i in trange(col - new_col):
+        img = carve_col(img)
 
     return img
 
@@ -107,7 +104,7 @@ def main():
     out_filename = sys.argv[3]
 
     img = imread(in_filename)
-    out = crop_c(img, scale)
+    out = crop_col(img, scale)
     imwrite(out_filename, out)
 
 if __name__ == '__main__':
