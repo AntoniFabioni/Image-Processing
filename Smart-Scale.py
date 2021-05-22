@@ -1,5 +1,5 @@
 '''
-Use a seam carving algorithm to reduce image width while
+Using a seam carving algorithm, reduce image width while
 preserving important details by removing low-contour regions.
 '''
 
