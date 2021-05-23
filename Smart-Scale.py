@@ -34,7 +34,7 @@ def calc_energy(img):
 
     return energy_map
 
-# numba.jit helps speed up calculations
+# numba.jit speeds up calculations
 @numba.jit
 def minimum_seam(img):
     
