@@ -1,6 +1,9 @@
 '''
 Using a seam carving algorithm, reduce image width while
 preserving important details by removing low-contour regions.
+
+This program is intended to be called
+from the command line.
 '''
 
 import sys
@@ -109,6 +112,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-# This program is intended to be called
-# from the command line.
