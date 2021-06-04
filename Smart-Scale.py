@@ -51,9 +51,9 @@ def minimum_seam(img):
         for j in range(0, col):
             # Handle the left edge of the image, to ensure we don't index -1
             if j == 0:
-                idx = np.argmin(M[i - 1, j:j + 2])
-                backtrack[i, j] = idx + j
-                min_energy = M[i - 1, idx + j]
+                idx = np.argmin(M[i - 1, 0:2])
+                backtrack[i, 0] = idx
+                min_energy = M[i - 1, idx]
             else:
                 idx = np.argmin(M[i - 1, j - 1:j + 2])
                 backtrack[i, j] = idx + j - 1
