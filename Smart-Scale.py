@@ -14,14 +14,14 @@ from scipy.ndimage.filters import convolve
 from tqdm import trange
 
 def calc_energy(img):
-    filter_du = np.array([
+    filter_dv = np.array([
         [1.0, 2.0, 1.0],
         [0.0, 0.0, 0.0],
         [-1.0, -2.0, -1.0],
     ])
 
     # transpose switches indices of rows and columns
-    filter_dv = np.transpose(filter_du)
+    filter_du = np.transpose(filter_dv)
 
     # This converts from a 2D filter to a 3D filter, replicating the same
     # filter for each channel: R, G, B
