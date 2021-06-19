@@ -1,6 +1,6 @@
 '''
 Using a seam carving algorithm, reduces image width while
-preserving important details by removing low-contour regions.
+preserving important details (by removing low-contour regions).
 
 This program is intended to be called
 from the command line.
