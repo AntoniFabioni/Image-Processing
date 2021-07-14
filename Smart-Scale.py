@@ -110,5 +110,6 @@ def main():
     out = crop_col(img, scale)
     imwrite(out_filename, out)
 
+# Runs main() as soon as the program starts
 if __name__ == '__main__':
     main()
